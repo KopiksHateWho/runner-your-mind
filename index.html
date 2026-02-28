@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint of Knowledge - Educational Runner Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div id="game-container">
+        
+        
+        <div id="start-screen" class="screen active">
+            <div class="screen-content">
+                <h1 class="game-title">Sprint of Knowledge</h1>
+                <p class="game-subtitle">Run for Your Mind!</p>
+                
+                <div class="instructions">
+                    <h2>How to Play</h2>
+                    <ul>
+                        <li><strong>Jump:</strong> Press SPACE or UP ARROW to jump over obstacles</li>
+                        <li><strong>Avoid:</strong> Don't hit the obstacles </li>
+                        <li><strong>Quiz:</strong> Answer questions every 10-15 seconds</li>
+                        <li><strong>Goal:</strong> Get high score while learning!</li>
+                    </ul>
+                </div>
+                
+                <button id="start-btn" class="game-btn">Start Game</button>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div id="hud">
+                <div class="hud-item">
+                    <span class="hud-label">Score</span>
+                    <span id="score-display" class="hud-value">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Energy</span>
+                    <div id="energy-bar-container">
+                        <div id="energy-bar"></div>
+                    </div>
+                    <span id="energy-text" class="hud-value">3/3</span>
+                </div>
+            </div>
+
+            <canvas id="game-canvas" width="800" height="400"></canvas>
+            
+            <button id="mobileJumpBtn">Jump</button>
+
+            <div id="quiz-modal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Knowledge Check!</h2>
+                        <div id="quiz-timer">
+                            <span class="timer-label">Time:</span>
+                            <span id="timer-value">10</span>
+                        </div>
+                    </div>
+                    
+                    <div class="question-container">
+                        <p id="question-text" class="question-text">Question goes here...</p>
+                        
+                        <div id="options-container" class="options-container">
+                            <button class="option-btn" data-index="0">Option A</button>
+                            <button class="option-btn" data-index="1">Option B</button>
+                            <button class="option-btn" data-index="2">Option C</button>
+                            <button class="option-btn" data-index="3">Option D</button>
+                        </div>
+                    </div>
+
+                    <div id="quiz-feedback" class="feedback hidden"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameover-screen" class="screen">
+            <div class="screen-content">
+                <h1 class="game-over-title">Game Over!</h1>
+                
+                <div class="final-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Final Score</span>
+                        <span id="final-score" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Performance</span>
+                        <span id="performance-rating" class="stat-value">-</span>
+                    </div>
+                </div>
+
+                <p id="performance-message" class="performance-message">
+                    Keep practicing to improve!
+                </p>
+                
+                <button id="restart-btn" class="game-btn">Play Again</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
